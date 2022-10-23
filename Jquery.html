@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#p1").mouseenter(function(){
+                alert("ten ban la Tuan Anh");
+            });
+
+            $("#p1").mouseleave(function(){
+                alert("bye! see you again! ");
+            });
+
+            $("#hide").click(function(){
+                $("h1").hide();
+            });
+
+            $("#show").click(function(){
+                $("h1").show();
+            });
+
+            $("#button1").click(function(){
+                $("#div1").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                });
+            });
+
+            $("#button2").click(function(){
+            var div = $("#div2");
+            div.animate({height: '300px', opacity: '0.4'}, "slow");
+            div.animate({width: '300px', opacity: '0.8'}, "slow");
+            div.animate({height: '100px', opacity: '0.4'}, "slow");
+            div.animate({width: '100px', opacity: '0.8'}, "slow");
+            });
+        });
+
+        </script>
+
+        <style>
+            h1 {
+                margin: 20px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="p1" > Tuan Anh </p>
+        <h1>hello everyone</h1>
+        <button id="hide">Hide</button>
+        <button id="show">Show</button><br><br>
+        <button id="button1">Start Animation-1</button>
+        <div id="div1" style="background:#e30f21;height:100px;width:100px;position:absolute; margin:50px"><h1>Tuan Anh</h1></div>
+        <br>
+        <br>
+        <button id="button2">Start Animation-2</button>
+        <div id="div2" style="background:#98bf21;height:100px;width:100px;position:absolute; margin :150px"></div>
+        
+    </body>
+</html>

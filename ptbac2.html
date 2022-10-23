@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="=URF-8">
+        <title>Tuan Anh</title>
+    </head>
+
+    <script>
+        function calculation(){
+            var mes = "";
+            var x1;
+            var x2;
+            var a = document.getElementById('num1').value;
+            var b = document.getElementById('num2').value;
+            var c = document.getElementById('num3').value;
+            var delta = b*b - 4*a*c;
+            if (a != 0 && b != 0 && c != 0){
+                if (delta < 0){
+                    mes = "Phuong trinh vo nghiem"
+                }
+                else if (delta == 0){
+                    mes = "Phuong trinh co nghiem kep :"
+                    x1 = -b/2*a;
+                    x2 = b/2*a;
+                }
+                else {
+                    mes = "Phuong trinh co 2 nghiem phan biet :"
+                    x1 = (-b - Math.sqrt(delta))/(2*a);
+                    x2 = (-b + Math.sqrt(delta))/(2*a);
+                }
+            }
+            else if (a == 0){
+                mes = "Day la phuong trinh bac nhat co nghiem la :"
+                x1 = -1*c/b;
+            }
+
+            window.alert(mes)
+            document.getElementById('x1').innerHTML = x1;
+            document.getElementById('x2').innerHTML = x2;
+            console.log(delta);
+
+        }
+        
+    </script>
+
+    <style>
+        #num1, #num2, #num3 {
+            width: 100px;
+            
+        }
+
+        span {
+            padding-right: 10px;
+        }
+
+        #cals {
+            margin-left: 20px;
+        }
+
+        .color {
+            margin : 20px 0;
+            border : 2px solid #c7063a;
+            background: #f8f021 ;
+            width: 10%;
+
+        }
+
+        a {
+            color: #8116f3;
+        }
+
+    </style>
+
+    <body>
+        <str> Giải phương trình bậc 2 </str>
+        <br><br>
+        <h1 id="name" class="color">Tuan Anh</h1><br><br>
+        <input id="num1" type="number" value=""><span><a> X<sup>2</sup> + </a></span>
+        <input id="num2" type="number" value=""><span><a> X + </a></span>
+        <input id="num3" type="number" value=""><span><a> = 0 </a></span>
+        <button id="calc" type="button" onclick="calculation()"> calc </button>
+
+        <p>Nghiem 1 = <span id="x1"></span></p>
+        <p>Nghiem 2 = <span id="x2"></span></p>
+    </body>
+</html>
